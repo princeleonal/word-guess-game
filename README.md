@@ -1,59 +1,107 @@
-# word-guess-game
-Embark on a thrilling journey of words with the Word Guess Game! This Python-based command-line game challenges players to guess a secret word within a limited number of attempts. Perfect for word enthusiasts and coding beginners alike, this project showcases the power of Python in creating fun and interactive experiences.
+# 🎮 Crafting a Word Guess Game with Python + Amazon Q CLI
 
+## 🚀 Introduction
 
-# Word Guess Game
+Game development, even in its simplest forms, offers a great way to practice logic, creativity, and programming fundamentals. In this post, I’ll walk you through building a minimalist, terminal-based **Word Guess Game** using **Python** and the **Amazon Q CLI**.
 
-![Word Guess Game](https://via.placeholder.com/728x90.png?text=Word+Guess+Game)
+## 🧠 Project Summary
 
-## 🌟 Overview
+The **Word Guess Game** is a CLI-based game where the player tries to guess a randomly selected word within a set number of attempts. Each guess returns feedback, nudging the player toward the correct answer.
 
-Welcome to the **Word Guess Game**! This engaging command-line game is designed to test your vocabulary skills and logical thinking. Built with Python, the game offers a simple yet captivating experience where players must guess a randomly selected word within a set number of attempts.
+* **Tech**: Python, GitHub, Amazon Q CLI
+* **Genre**: Puzzle / Word
+* **Mode**: Single-player (CLI)
 
-## 🎮 Features
+## 🛠️ Development Steps
 
-- **Random Word Selection:** Each game session presents a new challenge with a randomly chosen word.
-- **Limited Attempts:** Players have six attempts to guess the correct word, adding an element of suspense.
-- **User-Friendly Interface:** Simple text-based interface that is easy to navigate.
-- **Replayability:** Endless fun with a variety of words to guess.
+### 1. ⚙️ Environment Setup
 
-## 🚀 Getting Started
+I used:
 
-### Prerequisites
+* A local Python 3 environment
+* GitHub for version control ([repo here](https://github.com/princeleonal/word-guess-game))
+* **Amazon Q CLI** to quickly scaffold the initial codebase, get function suggestions, and debug logic in real-time.
 
-- Python 3.x installed on your machine.
+The Amazon Q CLI made it extremely efficient to:
 
-### Installation
+* Generate basic input/output loops
+* Refactor repetitive code
+* Catch small logical errors before testing
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/princeleonal/word-guess-game.git
-   ```
-2. **Navigate to the Project Directory:**
-   ```bash
-   cd word-guess-game
-   ```
+### 2. 🧩 Game Logic Breakdown
 
-### Running the Game
+#### 📝 Word Selection
 
-To start the game, run the following command in your terminal:
-```bash
-python3 word_guess.py
+```python
+import random
+words = ['python', 'cli', 'guess', 'openai', 'developer']
+word_to_guess = random.choice(words)
 ```
 
-## 📜 How to Play
+#### 🎮 Game Loop
 
-1. **Start the Game:** Launch the game using the command above.
-2. **Enter Your Guess:** Type a 5-letter word and press Enter.
-3. **Feedback:** The game will inform you if your guess is correct or how many attempts remain.
-4. **Win or Lose:** Guess the word correctly within six attempts to win!
+```python
+attempts = 6
+guessed_letters = []
 
-## 🤝 Contributing
+while attempts > 0:
+    display = ''.join([ch if ch in guessed_letters else '_' for ch in word_to_guess])
+    print(f"Word: {display}")
 
-We welcome contributions! If you have ideas for improvements or new features, feel free to fork the repository and submit a pull request.
+    guess = input("Enter your guess: ").strip().lower()
 
-## 📄 License
+    if len(guess) == 1:
+        if guess in guessed_letters:
+            print("Already guessed.")
+        elif guess in word_to_guess:
+            print("Correct!")
+            guessed_letters.append(guess)
+        else:
+            attempts -= 1
+            print(f"Wrong! {attempts} attempts left.")
+    elif guess == word_to_guess:
+        print("🎉 You win!")
+        break
+    else:
+        attempts -= 1
+        print(f"Wrong guess! {attempts} attempts left.")
+```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### 3. 🌟 Features
 
-Thank you for checking out the Word Guess Game! We hope you enjoy playing it as much as we enjoyed building it.
+* Customizable word list
+* Letter tracking
+* Guess-by-letter or full word
+* CLI feedback after every move
+
+## ✨ What I Learned
+
+* **Quick prototyping** with Amazon Q CLI saved a ton of time.
+* Importance of **state management** in games.
+* Clean CLI UX boosts player engagement.
+
+## 📷 Sneak Peek
+
+![Word Guess Terminal](sandbox:/mnt/data/A_screenshot_of_a_terminal_window_displays_a_Word_.png)
+
+## 🔗 Try It Yourself
+
+👉 [GitHub Repo](https://github.com/princeleonal/word-guess-game)
+
+Fork it, run it, improve it—and let me know what you build!
+
+## 📱 Share the Fun
+
+If you liked the game, scan this QR code and share it with your dev circle:
+
+![QR Code to Blog](sandbox:/mnt/data/caf70675-a19d-441d-856b-fd0e670d1db0.png)
+
+## 🧵 Wrap Up
+
+This was a light but rewarding project—perfect to test your logic, and even better with an AI coding assistant like **Amazon Q CLI** in the loop.
+
+---
+
+👕 \[Redeemed the Amazon Q T-shirt?] You bet.
+
+Got ideas for game #2? Ping me!
