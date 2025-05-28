@@ -27,7 +27,7 @@ Welcome to the **Word Guess Game**! This engaging command-line game is designed 
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/word-guess-game.git
+   git clone https://github.com/princeleonaL/word-guess-game.git
    ```
 2. **Navigate to the Project Directory:**
    ```bash
