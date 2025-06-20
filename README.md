@@ -80,22 +80,6 @@ while attempts > 0:
 * Importance of **state management** in games.
 * Clean CLI UX boosts player engagement.
 
-## 📷 Sneak Peek
-
-![Word Guess Terminal](sandbox:/mnt/data/A_screenshot_of_a_terminal_window_displays_a_Word_.png)
-
-## 🔗 Try It Yourself
-
-👉 [GitHub Repo](https://github.com/princeleonal/word-guess-game)
-
-Fork it, run it, improve it—and let me know what you build!
-
-## 📱 Share the Fun
-
-If you liked the game, scan this QR code and share it with your dev circle:
-
-![QR Code to Blog](sandbox:/mnt/data/caf70675-a19d-441d-856b-fd0e670d1db0.png)
-
 ## 🧵 Wrap Up
 
 This was a light but rewarding project—perfect to test your logic, and even better with an AI coding assistant like **Amazon Q CLI** in the loop.
